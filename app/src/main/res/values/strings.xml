@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Fin RateX</string>
+    <string name="toman">تومان</string>
+    <string name="No_data_available">داده‌ای موجود نیست</string>
+</resources>
