@@ -73,9 +73,11 @@ Run:
 Run the project on an emulator or a physical device.
 
 🤝 Contribution
+
 Any contributions or improvements to this project are welcome. To contribute, please first open an Issue on GitHub, and then submit a Pull Request.
 
 👨‍💻 Contact the Developer
+
 Name: Iraj Najafi
 
 Email: irajnajafi1988@gmail.com
