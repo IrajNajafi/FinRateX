@@ -1,7 +1,7 @@
 
 
-| ![Screen1](screenshots/date.png) | ![Screen2](screenshots/details.png) |
-|---------------------------------|-----------------------------------|
-| ![Screen3](screenshots/details2.png) | ![Screen4](screenshots/homeCrypto.png) |
-| ![Screen5](screenshots/homeCurrency.png) | ![Screen6](screenshots/homeGold.png) |
-| ![Screen7](screenshots/splashError.png) | ![Screen8](screenshots/splashLoading.png) |
+| ![date](screenshots/date.png)            | ![details](screenshots/details.png) |
+|------------------------------------------|-----------------------------------|
+| ![details2](screenshots/details2.png)     | ![Crypto](screenshots/homeCrypto.png) |
+| ![Currency](screenshots/homeCurrency.png) | ![Gold](screenshots/homeGold.png) |
+| ![Error](screenshots/splashError.png)  | ![Loading](screenshots/splashLoading.png) |
