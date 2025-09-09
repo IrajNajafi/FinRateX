@@ -45,13 +45,13 @@ fun SplashScreen(
         isTimerFinished = true
     }
 
-    Box(modifier = Modifier.fillMaxSize()) {
+    Box(modifier = Modifier) {
         // Background image
         Image(
             painter = painterResource(R.drawable.golden),
             contentDescription = null,
             modifier = Modifier.fillMaxSize(),
-            contentScale = ContentScale.Crop
+            contentScale = ContentScale.FillBounds
         )
 
         when {

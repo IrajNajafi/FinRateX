@@ -48,14 +48,14 @@ fun PriceItemCard(
                 ),
                 shape = RoundedCornerShape(12.dp)
             )
-            .padding(12.dp),
+            .padding(10.dp),
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.SpaceBetween
     ) {
         // Currency unit (fixed text)
         Text(
-            text = stringResource(R.string.toman),
-            fontSize = 18.sp,
+            text = "تومان",
+            fontSize = 15.sp,
             fontWeight = FontWeight.Bold,
             color = Color.White
         )
@@ -65,7 +65,7 @@ fun PriceItemCard(
         // Display price, formatted from Rial to Toman
         Text(
             text = formatRialToToman(price),
-            fontSize = 24.sp,
+            fontSize = 19.sp,
             fontWeight = FontWeight.Bold,
             color = Color.White
         )
@@ -75,14 +75,14 @@ fun PriceItemCard(
         // Display the label/name of the item
         Text(
             text = label,
-            fontSize = 24.sp,
+            fontSize = 18.sp,
             fontWeight = FontWeight.Bold,
             color = Color.White
         )
 
         // Image card for the item
         Card(
-            modifier = Modifier.size(70.dp),
+            modifier = Modifier.size(50.dp),
             shape = RoundedCornerShape(12.dp),
             elevation = CardDefaults.cardElevation(8.dp)
         ) {
@@ -90,7 +90,7 @@ fun PriceItemCard(
                 painter = painterResource(imageResProvider()),
                 contentDescription = null,
                 modifier = Modifier
-                    .size(70.dp)
+                    .size(60.dp)
                     .background(
                         brush = Brush.linearGradient(
                             listOf(

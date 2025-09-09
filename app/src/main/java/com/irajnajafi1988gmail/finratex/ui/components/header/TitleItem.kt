@@ -94,7 +94,7 @@ fun <T> TitleCard(imageRes: Int, data: T) {
 
     // Card layout for the item
     Card(
-        modifier = Modifier.size(200.dp),
+        modifier = Modifier.size(180.dp),
         shape = RoundedCornerShape(16.dp),
         colors = CardDefaults.cardColors(containerColor = Color.Black.copy(0.7f)),
         elevation = CardDefaults.cardElevation(defaultElevation = 8.dp)

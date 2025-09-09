@@ -50,13 +50,13 @@ fun ItemDateTitle(formattedDate: String) {
     Card(
         modifier = Modifier
             .padding(horizontal = 40.dp, vertical = 20.dp)
-            .height(120.dp)
+
             .fillMaxWidth(),
         shape = RoundedCornerShape(12.dp),
     ) {
         Box(
             modifier = Modifier
-                .fillMaxSize()
+                .fillMaxWidth()
                 .background(
                     brush = Brush.linearGradient(
                         colors = listOf(
