@@ -96,7 +96,11 @@ fun HomeScreen() {
                             items = data.golds,
                             imageResProvider = { goldInfoImage(it) },
                             labelExtractor = { it.label },
-                            priceExtractor = { it.price }
+                            priceExtractor = { it.price },
+                            symbolExtractor = {"ریال"}
+
+
+
                         )
                     }
 
@@ -105,7 +109,9 @@ fun HomeScreen() {
                             items = data.currencies,
                             imageResProvider = { R.drawable.ic_money },
                             labelExtractor = { it.label },
-                            priceExtractor = { it.price }
+                            priceExtractor = { it.price },
+                            symbolExtractor = {"ریال"}
+
                         )
                     }
 
@@ -114,7 +120,10 @@ fun HomeScreen() {
                             items = data.cryptocurrencies,
                             imageResProvider = { R.drawable.cryptocurrency },
                             labelExtractor = { it.label },
-                            priceExtractor = { it.price }
+                            priceExtractor = { it.price },
+                            symbolExtractor = {"$"}
+
+
                         )
                     }
                 }

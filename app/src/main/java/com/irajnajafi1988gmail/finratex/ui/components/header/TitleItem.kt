@@ -1,7 +1,16 @@
 package com.irajnajafi1988gmail.finratex.ui.components.header
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -15,7 +24,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.irajnajafi1988gmail.finratex.R
@@ -24,7 +32,7 @@ import com.irajnajafi1988gmail.finratex.domain.model.CurrencyInfo
 import com.irajnajafi1988gmail.finratex.domain.model.GoldInfo
 import com.irajnajafi1988gmail.finratex.ui.components.common.state.DateUiState
 import com.irajnajafi1988gmail.finratex.ui.components.common.state.UiStateHandler
-import com.irajnajafi1988gmail.finratex.utils.formatRialToToman
+import com.irajnajafi1988gmail.finratex.utils.formatWithCommas
 
 /**
  * Horizontal list of cards showing prices for Dollar, Gold, Coin, and Bitcoin.
@@ -72,19 +80,20 @@ fun <T> TitleCard(imageRes: Int, data: T) {
     val title: String
     val priceText: String
 
+
     // Extract title and formatted price based on data type
     when (data) {
         is CurrencyInfo -> {
             title = data.label
-            priceText = formatRialToToman(data.price)
+            priceText = formatWithCommas(data.price)
         }
         is GoldInfo -> {
             title = data.label
-            priceText = formatRialToToman(data.price)
+            priceText = formatWithCommas(data.price)
         }
         is CryptoInfo -> {
             title = data.label
-            priceText = formatRialToToman(data.price)
+            priceText = formatWithCommas(data.price)
         }
         else -> {
             title = ""
@@ -133,8 +142,14 @@ fun <T> TitleCard(imageRes: Int, data: T) {
                 verticalAlignment = Alignment.CenterVertically,
                 modifier = Modifier.fillMaxWidth()
             ) {
+                val symbolToDisplay = when (data) {
+                    is CurrencyInfo -> "ریال"
+                    is GoldInfo -> "ریال"
+                    is CryptoInfo -> "$"
+                    else -> ""
+                }
                 Text(
-                    text = stringResource(R.string.toman), // Currency unit
+                    text = symbolToDisplay, // Currency unit
                     color = Color.White,
                     maxLines = 1,
                     textAlign = TextAlign.Center

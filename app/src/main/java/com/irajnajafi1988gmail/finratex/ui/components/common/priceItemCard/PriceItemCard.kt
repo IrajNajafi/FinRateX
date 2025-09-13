@@ -2,7 +2,13 @@ package com.irajnajafi1988gmail.finratex.ui.components.common.priceItemCard
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
@@ -13,13 +19,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.irajnajafi1988gmail.finratex.ui.theme.AppColor
-import com.irajnajafi1988gmail.finratex.utils.formatRialToToman
-import com.irajnajafi1988gmail.finratex.R
+import com.irajnajafi1988gmail.finratex.utils.formatWithCommas
 
 
 /**
@@ -33,7 +37,9 @@ import com.irajnajafi1988gmail.finratex.R
 fun PriceItemCard(
     label: String,
     price: Long,
-    imageResProvider: () -> Int
+    imageResProvider: () -> Int,
+    symbol:String
+
 ) {
     // Row container for the entire card
     Row(
@@ -54,7 +60,7 @@ fun PriceItemCard(
     ) {
         // Currency unit (fixed text)
         Text(
-            text = "تومان",
+            text = symbol,
             fontSize = 15.sp,
             fontWeight = FontWeight.Bold,
             color = Color.White
@@ -64,7 +70,7 @@ fun PriceItemCard(
 
         // Display price, formatted from Rial to Toman
         Text(
-            text = formatRialToToman(price),
+            text = formatWithCommas(price),
             fontSize = 19.sp,
             fontWeight = FontWeight.Bold,
             color = Color.White

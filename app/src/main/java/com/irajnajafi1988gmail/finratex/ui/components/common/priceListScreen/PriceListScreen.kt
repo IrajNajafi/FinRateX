@@ -15,7 +15,9 @@ fun <T> PriceListScreen(
     items: List<T>,                      // List of generic items to display
     imageResProvider: (T) -> Int,        // Lambda to provide image resource for each item
     labelExtractor: (T) -> String,       // Lambda to extract the label/name of each item
-    priceExtractor: (T) -> Long          // Lambda to extract the price of each item
+    priceExtractor: (T) -> Long, // Lambda to extract the price of each item
+    symbolExtractor:(T)->String
+
 ) {
     LazyColumn(
         modifier = Modifier
@@ -25,11 +27,17 @@ fun <T> PriceListScreen(
     ) {
         items(items) { item ->
             // Display each item in a card using PriceItemCard
-            PriceItemCard(
-                label = labelExtractor(item),
-                price = priceExtractor(item),
-                imageResProvider = { imageResProvider(item) }
-            )
+
+                PriceItemCard(
+                    label = labelExtractor(item),
+                    price = priceExtractor(item),
+                    imageResProvider = { imageResProvider(item) },
+                    symbol = symbolExtractor(item)
+
+
+
+                )
+            }
         }
     }
-}
+
